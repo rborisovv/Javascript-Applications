@@ -1,0 +1,56 @@
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/default.css?v=1");
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/mediaqueries.css?v=1");
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/lightgallery.css?v=1");
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/flatpicker.css?v=1");
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/flatpicker.css?v=1");
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/flatpicker.css?v=1");
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/print.css");
+@import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/custom.css?v=1");
+
+@import url('');
+
+input {
+  width: 30%;
+  height: 2rem;
+  border-radius: 8px;
+  border: 2px solid black;
+}
+
+ul.auto-complete {
+  position: relative;
+  height: auto;
+}
+
+ul.auto-complete > p {
+  width: 100%;
+  padding-top: 10px;
+}
+
+ul.auto-complete > li {
+    background-color: rgb(252, 243, 233);
+}
+
+ul.auto-complete > li:hover {
+    background-color: yellow;
+    border-radius: 8px;
+}
+
+ul.auto-complete > li > p {
+    font-size: 20px;
+}
+
+ul.auto-complete:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+ul.auto-complete {
+    position: relative;
+    left: 23.8rem;
+    width: 40%;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.green {
+    color: rgb(32, 240, 25);
+}

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>       
+  <script defer src="./autoComplete.js"></script>
+  <script defer src="./search.js"></script>
+  <title>Document</title>
+</head>
+    <body>
+      <!-- //           Information message -->
+
+      <!-- //          Header    -->
+      <div id="breadcrumb" class="breadcrumb">
+        <div class="block no-mt">
+          <div class="wrapper">
+            <div class="breadcrumbs">
+              <nav class="breadcrumbs-list">
+                <a href="/en/">Home</a>
+                <!-- hides the internal 'root' product category -->
+                <span>Frequently Asked Questions</span>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yCmsComponent span-24 section1 cms_disp-img_slot">
+        <div class="wrapper wrapper-1300">
+          <div class="block">
+            <article class="text">
+              <div class="text-center">
+                <h2 class="text-thin">Често задавани въпроси</h2>
+                <br />
+                <img
+                  src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                />
+                <br />
+                <br />
+                <h3 class="text-thin text-gray">
+                  Тук ще откриете отговорите на често задаваните въпроси към
+                  нас.
+                </h3>
+                <br />
+                <div class="wrapper">
+                  <input oninput="autoComplete()" class="search-box" type="text" value="">
+                  <!-- <button onclick="autoComplete()">Търси</button> -->
+                  <ul class="auto-complete"></ul>
+                </div>
+                
+                <hr />
+              </div>
+              <ul class="accordion faq-accordion">
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>Трябва ли да съм регистриран, за да направя поръчка?</p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Не не е задължително да бъдете регистриран, за да
+                      пазарувате. Имате възможност да пазарувате като
+                      <shrong>ГОСТ.</shrong> <br />
+                      В този случай обаче няма да имате достъп до допълнителни
+                      функционалности като:
+                    </p>
+                    <br />
+                    <ul class="dot-list large-list">
+                      <li>Архив поръчки</li>
+                      <li>Персонализация</li>
+                      <li>Преглед на изпратени поръчки</li>
+                      <li>Запазване на кошници с покупки</li>
+                      <li>Добавяне на артикули в "Любими"</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>Как да направя поръчка?</p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      За да направите поръчка е необходимо да следвате
+                      инструкциите описани в страницата "Как да поръчам"
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>
+                      <a href="/bg/howto-order" class="button"
+                        >Виж как да поръчаш</a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>Как мога да заплатя направената от мен поръчка?</p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Цената на поръчана от онлайн магазина стока може да бъде
+                      заплатена чрез един от следните способи:
+                    </p>
+                    <ul class="dot-list large-list">
+                      <li>Наложен платеж</li>
+                      <li>Плащане с банкова карта</li>
+                      <li>Банков превод</li>
+                      <li>Плащане с ePay.bg</li>
+                    </ul>
+                    <br />
+                    Моля, имайте предвид, че в определени случаи е възможно
+                    някой от изброените способи да не е приложим. Всички
+                    плащания се извършват само в български лева. При плащане с
+                    банков превод цялата дължима сума по фактурата трябва да
+                    бъде заплатена в срок до 5 работни дни след издаване на
+                    фактурата; в противен случай поръчката ще бъде автоматично
+                    анулирана.
+                    <p>&nbsp;</p>
+                    <p>
+                      <a href="/bg/terms-and-conditions#payments" class="button"
+                        >Общи условия | Плащане</a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>Мога ли да закупя стока на изплащане?</p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Всеки, който желае да закупи от онлайн магазина стока на
+                      изплащане следва да кандидатства за отпускане на кредит
+                      пред някоя от трите финансови институции (UniCredit
+                      Consumer Financing, БНП Париба Лични финанси, TBI Bank,
+                      ДСК Кредит), в случай че цената на онлайн поръчката (без
+                      цената за обработване и доставка) е в минимален размер на
+                      150 (сто и петдесет) лева. Кандидатстването се извършва
+                      само онлайн посредством кликване върху бутона "Купи на
+                      изплащане".
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>
+                      <a href="/bg/terms-and-conditions#leasing" class="button"
+                        >Общи условия | Онлайн покупки на изплащане</a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>Кога ще пристигне направената от мен поръчка?</p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Доставка на поръчана от онлайн магазина стока се извършва
+                      само до адреси на територията на Република България.
+                      Получаването на стоката става само след подписване на
+                      документ от страна на купувача, удостоверяващ
+                      приемо-предаването. Сроковете за доставка на поръчани чрез
+                      онлайн магазина стоки са следните:
+                    </p>
+                    <ul class="dot-list large-list">
+                      <li>
+                        За стоки поръчани до 14 часа българско време - 72 часа,
+                        считано от деня следващ деня в който е потвърдена
+                        поръчката.
+                      </li>
+                      <li>
+                        За стоки поръчани след 14 часа българско време - 96
+                        часа, считано от деня следващ деня в който е потвърдена
+                        поръчката.
+                      </li>
+                      <li>
+                        За едра бяла техника срокът за доставка е до 5 дни,
+                        считано от деня следващ деня в който е потвърдена
+                        поръчката.
+                      </li>
+                    </ul>
+                    <p>&nbsp;</p>
+                    <p>
+                      <a href="/bg/terms-and-conditions#delivery" class="button"
+                        >Общи условия | Доставка</a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>Доставяте ли стока в чужбина?</p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Доставка на поръчана от онлайн магазина стока се извършва
+                      само до адреси на територията на Република България.
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>
+                      Мога ли да поръчам стока онлайн и да я взема от магазин?
+                    </p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Да. Можете да се възползвате от нашата услуга "Купи онлайн
+                      и вземи от магазин".
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>
+                      <a href="/bg/pickup-from-store" class="button"
+                        >Научи повече за услугата</a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>
+                      Може ли да пазарувам онлайн с Технополис карти подарък?
+                    </p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      При онлайн покупки, както и когато цената е договорена с
+                      отстъпка, използването на Технополис карти подарък,
+                      ваучери и др. подобни не е приложимо.
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>
+                      Как мога да върна продукт закупен от онлайн магазина на
+                      Технополис?
+                    </p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Можете да върнете продукт закупен от онлайн магазина на
+                      Технополис чрез формата "Връшане на поръчка". Повече
+                      информация можете да откриете в
+                      <a href="/bg/terms-and-conditions#withdrawal"
+                        >Общи условия | Отказ от сключен договор от
+                        разстояние</a
+                      >
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>
+                      <a href="/bg/return-products" class="button"
+                        >Връщане на поръчка</a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>
+                      Мога ли да откажа поръчка и как ще ми се възстанови сумата
+                      по нея?
+                    </p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      ??????????????????????????????????????????????????????????????????????????
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>Мога ли да направя поръчка по телефон или Viber?</p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>
+                      Да можете да направите поръчка по телефона или Viber. За
+                      да направите поръчка моля следвайте стъпките описани в
+                      страницата "Поръчай по телефон или Viber"
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>
+                      <a href="/bg/order-by-phone" class="button"
+                        >Научи повече за услугата</a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion-item">
+                  <div class="accordion-header">
+                    <p>
+                      Ако избера наложен платеж, може ли да платя с карта на
+                      куриера?
+                    </p>
+                  </div>
+                  <div class="accordion-body">
+                    <p>Да можете да заплатите с карта на куриер.</p>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                В случай, че не сте открили отговора на вашият въпрос, винаги
+                можете да ни се обадите на тел.:
+                <a href="tel:02/ 44 57 806">02/ 44 57 806</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="span-24 section2"></div>
+    </main>
+
+    <footer id="footer">
+      <div class="top">
+        <div class="wrapper">
+          <div class="table subscribe-promotion" id="subscribe-promotion">
+            <div class="cell subscribe-promotion-title">
+              Subscribe for our <br />special offers:
+            </div>
+            <div class="cell subscribe-promotion-form">
+              <form class="subscribe-form-footer">
+                <fieldset>
+                  <input
+                    type="text"
+                    name="subscribe_email"
+                    id="subscribeNewsletterUI_email"
+                    autocomplete="off"
+                    placeholder="Your email"
+                  />
+                  <input
+                    type="hidden"
+                    id="subscribeNewsletterUI_url"
+                    value="/en/newsletter_subscribe"
+                  />
+                  <button id="subscribeNewsletterUIBtn" type="button">
+                    <span>Subscribe</span>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+            <div class="cell subscribe-award">
+              <small
+                >If you subscribe, you agree to receive on your e-mail
+                Technopolis special offers.</small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="wrapper">
+          <div class="container-grid footer-grid">
+            <div class="grid-d-3 grid-ts-6 grid-ms-12">
+              <h6>Technopolis</h6>
+              <ul class="footer-menu">
+                <li class="yCmsComponent">
+                  <a href="/en/aboutus" title="About Us">About Us</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/careers" title="Careers">Careers</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/news" title="News">News</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a
+                    href="/en/terms-and-conditions"
+                    title="Terms and Conditions"
+                    >Terms and Conditions</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="grid-d-3 grid-ts-6 grid-ms-12">
+              <h6>Contacts</h6>
+              <ul class="footer-menu">
+                <li class="yCmsComponent">
+                  <a href="/en/contacts" title="Contacts">Contacts</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/stores" title="Stores">Stores</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/repair-shops" title="Repair shops"
+                    >Repair shops</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="grid-d-3 grid-ts-6 grid-ms-12">
+              <h6>Clients</h6>
+              <ul class="footer-menu">
+                <li class="yCmsComponent">
+                  <a href="/en/advices" title="Advices">Advices</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/transport" title="Transport">Transport</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/delivery" title="Delivery for online purchases"
+                    >Delivery for online purchases</a
+                  >
+                </li>
+                <li class="yCmsComponent">
+                  <a
+                    href="/en/doorstep-delivery"
+                    title="Doorstep delivery when purchased from physical stores"
+                    >Doorstep delivery when purchased from physical stores</a
+                  >
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/pickup-from-store" title="Pick from store"
+                    >Pick from store</a
+                  >
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/services" title="Services">Services</a>
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/return-products" title="Order return"
+                    >Order return</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="grid-d-3 grid-ts-6 grid-ms-12">
+              <h6>Information</h6>
+              <ul class="footer-menu">
+                <li class="yCmsComponent">
+                  <a href="/en/howto-order" title="How to order"
+                    >How to order</a
+                  >
+                </li>
+                <li class="yCmsComponent">
+                  <a
+                    href="/en/covid-19"
+                    title="Sanitary and hygienic conditions"
+                    >Sanitary and hygienic conditions</a
+                  >
+                </li>
+                <li class="yCmsComponent">
+                  <a href="/en/recycling" title="Recycling">Recycling</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom clearfix">
+        <div class="wrapper">
+          <div class="pull-left">
+            <ul class="cards-list">
+              <li>
+                <img
+                  src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                  alt="VISA"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                  alt="Mastercard"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                  alt="Maestro"
+                />
+              </li>
+              <li>
+                <a href="https://www.epay.bg" target="_blank"
+                  ><img
+                    src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                    alt="ePay"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="pull-right">
+            <ul class="social-list">
+              <li>Follow us:</li>
+              <li>
+                <a href="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg" target="_blank"
+                  ><img
+                    src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                    alt="Facebook"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                  target="_blank"
+                  ><img
+                    src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                    alt="Instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/TechnopolisBulgaria"
+                  target="_blank"
+                  ><img
+                    src="https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/images/layout/quote.svg"
+                    alt="Youtube"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="pull-center">
+            <p>
+              &copy; Technopolis. All rights reserved. Web design
+              <a
+                href="http://studiox.bg"
+                target="_blank"
+                title="Studio X Creative / Web Design / Development"
+                class="underline"
+                >StudioX</a
+              >
+            </p>
+            <p>
+              <small
+                >This site is protected by reCAPTCHA and the Google
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  class="underline"
+                  >Privacy Policy</a
+                >
+                and
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  class="underline"
+                  >Terms of Service</a
+                >
+                apply.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <a href="javascript:;" class="to-compare js-proceed__compare"
+        ><span><i id="to-compare-footer"></i></span
+      ></a>
+      <button type="button" class="to-top"><span>Up</span></button>
+    </footer>
+    <!-- Compare line -->
+    <div class="compare-line__wrapper">
+      <div class="compare-line">
+        <div class="wrapper">
+          <div class="compare-line__start">
+            <div class="compare-list js-compare__list"></div>
+          </div>
+          <div class="compare-line__end">
+            <button type="button" class="button button-clear js-clear__compare">
+              Clear all
+            </button>
+            <a
+              href="javascript:;"
+              class="button button-blue js-enable__compare"
+              id="compare-href"
+              data-product-code=""
+            >
+              Compare (<span class="js-compare__counter"></span>)</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--// Compare line -->
+
+    <!-- Modal Compare -->
+    <div class="modal modal-compare" id="modal_compare" aria-hidden="true">
+      <div class="modal-overlay" tabindex="-1">
+        <div class="modal-container" role="dialog" aria-modal="true">
+          <div role="document">
+            <div class="modal-header">
+              <strong
+                >You have reached the maximum number of products to
+                compare!</strong
+              >
+            </div>
+            <div class="content">
+              <div class="text-center">
+                <p>To add a new product, please remove one.</p>
+                <p>&nbsp;</p>
+                <p>
+                  <button type="button" class="button" data-modal-close="true">
+                    OK
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="modal-close"><span>Close</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal modal-compare"
+      id="modal_compare_alert"
+      aria-hidden="true"
+    >
+      <div class="modal-overlay" tabindex="-1">
+        <div class="modal-container" role="dialog" aria-modal="true">
+          <div role="document">
+            <div class="modal-header">
+              <strong>Please add at least two products for comparison!</strong>
+            </div>
+            <div class="content">
+              <div class="text-center">
+                <p>
+                  <button type="button" class="button" data-modal-close="true">
+                    OK
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="modal-close"><span>Close</span></button>
+        </div>
+      </div>
+    </div>
+    <!--// Modal Compare -->
+
+    <div
+      class="modal modal-compare"
+      id="modal_compare_added"
+      aria-hidden="true"
+    >
+      <div class="modal-overlay" tabindex="-1">
+        <div class="modal-container" role="dialog" aria-modal="true">
+          <div role="document">
+            <div class="modal-header">
+              <strong
+                >This product has already been added for comparison!</strong
+              >
+            </div>
+            <div class="content">
+              <div class="text-center">
+                <p>
+                  <button type="button" class="button" data-modal-close="true">
+                    OK
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="modal-close"><span>Close</span></button>
+        </div>
+      </div>
+    </div>
+
+    <form name="accessiblityForm">
+      <input
+        type="hidden"
+        id="accesibility_refreshScreenReaderBufferField"
+        name="accesibility_refreshScreenReaderBufferField"
+        value=""
+      />
+    </form>
+
+    <!--[if (gte IE 8) | (!IE)]><!-->
+    </body>
+</html>
