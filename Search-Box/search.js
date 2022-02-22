@@ -7,14 +7,14 @@ function findQuestion(clonedElement) {
         $(clonedElement).text().split(/\s+/).join(" ").trim()
       );
     })
-  ).get(0);
+  ).get(this);
 
   scrollIntoView(element);
 }
 
 function scrollIntoView(element) {
   if (element) {
-    const parentLiElement = $(element).parents(".accordion-item").get(0);
+    const parentLiElement = $(element).parents(".accordion-item").get(this);
     $(parentLiElement).addClass("open");
 
     $("html, body")

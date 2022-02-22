@@ -34,12 +34,13 @@ function autoComplete() {
 
     searchBox.css("border-color", "black");
     $(autoCompleteUl).empty();
+
     decorateElements(autoCompleteElements);
   }
 
   function decorateElements(autoCompleteElements) {
-    autoCompleteElements.forEach((p) => {
-      const clonedElement = $(p).clone();
+    $(autoCompleteElements).each(function () {
+      const clonedElement = $(this).clone();
 
       if ($(clonedElement).text().toLowerCase().indexOf(input) >= 0) {
         highlightText(clonedElement, input);
