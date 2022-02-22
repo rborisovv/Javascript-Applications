@@ -7,6 +7,7 @@ function autoComplete() {
 
   if (input.length == 0) {
     $(autoCompleteUl).empty();
+    searchBox.css("border-color", "black");
     clearListBorder();
     if ($(questionsLi).is(".open")) {
       $(questionsLi).removeClass("open");
@@ -14,7 +15,9 @@ function autoComplete() {
     return;
   }
 
-  $(input).on("change", findAutoCompleteNodes(questions, input));
+  try {
+    $(input).on("change", findAutoCompleteNodes(questions, input));
+  } catch (error) {}
 
   function findAutoCompleteNodes(questions, input) {
     const autoCompleteElements = [];
@@ -26,7 +29,6 @@ function autoComplete() {
 
     if (autoCompleteElements.length == 0) {
       searchBox.css("border-color", "red");
-      // resetListBorder();
       return;
     }
 
@@ -39,12 +41,17 @@ function autoComplete() {
     autoCompleteElements.forEach((p) => {
       const clonedElement = $(p).clone();
 
-      if ($(clonedElement).text().indexOf(input) >= 0) {
-        $(clonedElement).html(
-          $(clonedElement)
-            .text()
-            .replace(input, "<span class='green'>" + input + "</span>")
-        );
+      if ($(clonedElement).text().toLowerCase().indexOf(input) >= 0) {
+        highlightText(clonedElement, input);
+
+        function highlightText(clonedElement, input) {
+          const regExp = new RegExp("(" + input + ")", "gi");
+          $(clonedElement).html(
+            $(clonedElement)
+              .text()
+              .replace(regExp, "<span class='green'>" + "$1" + "</span>")
+          );
+        }
       }
 
       $(clonedElement).css("cursor", "pointer");
@@ -63,7 +70,3 @@ function autoComplete() {
     autoCompleteUl.css("border-radius", "");
   }
 }
-
-// Jquery has in-build function for autocomplete
-
-// See if i have to remove the border on falsy input, clear the list, or leave it as it is
