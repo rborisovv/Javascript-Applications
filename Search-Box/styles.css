@@ -16,11 +16,6 @@ input {
   border: 2px solid black;
 }
 
-ul.auto-complete {
-  position: relative;
-  height: auto;
-}
-
 ul.auto-complete > p {
   width: 100%;
   padding-top: 10px;
@@ -45,8 +40,9 @@ ul.auto-complete:not(:last-child) {
 
 ul.auto-complete {
     position: relative;
-    left: 23.8rem;
+    left: 24.2rem;
     width: 40%;
+    height: auto;
     padding: 12px;
     margin-top: 15px;
 }

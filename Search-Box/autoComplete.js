@@ -1,13 +1,13 @@
 function autoComplete() {
   const questions = $(".accordion-item > div.accordion-header > p");
   const questionsLi = $(".faq-accordion").children();
-  const input = $(".search-box").val().toLowerCase();
+  const searchBox = $(".search-box");
+  const input = searchBox.val().toLowerCase();
   const autoCompleteUl = $(".auto-complete");
 
   if (input.length == 0) {
     $(autoCompleteUl).empty();
-    autoCompleteUl.css("border", "");
-    autoCompleteUl.css("border-radius", "");
+    clearListBorder();
     if ($(questionsLi).is(".open")) {
       $(questionsLi).removeClass("open");
     }
@@ -25,12 +25,17 @@ function autoComplete() {
     });
 
     if (autoCompleteElements.length == 0) {
-      autoCompleteUl.css("border", "");
-      autoCompleteUl.css("border-radius", "");
+      searchBox.css("border-color", "red");
+      // resetListBorder();
+      return;
     }
 
+    searchBox.css("border-color", "black");
     $(autoCompleteUl).empty();
+    decorateElements(autoCompleteElements);
+  }
 
+  function decorateElements(autoCompleteElements) {
     autoCompleteElements.forEach((p) => {
       const clonedElement = $(p).clone();
 
@@ -52,6 +57,13 @@ function autoComplete() {
       $(autoCompleteUl).append($("<li></li>").html(clonedElement));
     });
   }
+
+  function clearListBorder() {
+    autoCompleteUl.css("border", "");
+    autoCompleteUl.css("border-radius", "");
+  }
 }
 
 // Jquery has in-build function for autocomplete
+
+// See if i have to remove the border on falsy input, clear the list, or leave it as it is

@@ -9,6 +9,10 @@ function findQuestion(clonedElement) {
     })
   ).get(0);
 
+  scrollIntoView(element);
+}
+
+function scrollIntoView(element) {
   if (element) {
     const parentLiElement = $(element).parents(".accordion-item").get(0);
     $(parentLiElement).addClass("open");
