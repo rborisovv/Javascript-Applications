@@ -7,13 +7,13 @@
 @import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/print.css");
 @import url("https://www.technopolis.bg/_ui/desktop/site-technopolis-bg/css/custom.css?v=1");
 
-@import url('');
-
 input {
   width: 30%;
   height: 2rem;
   border-radius: 8px;
   border: 2px solid black;
+  font-size: 20px;
+  margin: 0 auto;
 }
 
 ul.auto-complete > p {
@@ -22,31 +22,30 @@ ul.auto-complete > p {
 }
 
 ul.auto-complete > li {
-    background-color: rgb(252, 243, 233);
+  background-color: rgb(252, 243, 233);
 }
 
 ul.auto-complete > li:hover {
-    background-color: yellow;
-    border-radius: 8px;
+  background-color: yellow;
+  border-radius: 8px;
 }
 
 ul.auto-complete > li > p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 ul.auto-complete:not(:last-child) {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ul.auto-complete {
-    position: relative;
-    left: 24.2rem;
-    width: 40%;
-    height: auto;
-    padding: 12px;
-    margin-top: 15px;
+  width: 40%;
+  height: auto;
+  padding: 12px;
+  margin: auto;
+  margin-top: 15px;
 }
 
 .green {
-    color: rgb(32, 240, 25);
+  color: rgb(32, 240, 25);
 }

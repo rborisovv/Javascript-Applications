@@ -9,9 +9,7 @@ function autoComplete() {
     $(autoCompleteUl).empty();
     searchBox.css("border-color", "black");
     clearListBorder();
-    if ($(questionsLi).is(".open")) {
-      $(questionsLi).removeClass("open");
-    }
+    resetOpenedCards();
     return;
   }
 
@@ -39,31 +37,42 @@ function autoComplete() {
   }
 
   function decorateElements(autoCompleteElements) {
+    $(autoCompleteUl).css("border", "2px solid black");
+    $(autoCompleteUl).css("border-radius", "8px");
+
     $(autoCompleteElements).each(function () {
       const clonedElement = $(this).clone();
+      $(clonedElement).css("cursor", "pointer");
+      highlightText(clonedElement, input);
 
-      if ($(clonedElement).text().toLowerCase().indexOf(input) >= 0) {
-        highlightText(clonedElement, input);
-
-        function highlightText(clonedElement, input) {
-          const regExp = new RegExp("(" + input + ")", "gi");
-          $(clonedElement).html(
-            $(clonedElement)
-              .text()
-              .replace(regExp, "<span class='green'>" + "$1" + "</span>")
-          );
-        }
+      function highlightText(clonedElement, input) {
+        const regExp = new RegExp("(" + input + ")", "gi");
+        $(clonedElement).html(
+          $(clonedElement)
+            .text()
+            .replace(regExp, "<span class='green'>" + "$1" + "</span>")
+        );
       }
 
-      $(clonedElement).css("cursor", "pointer");
-      $(clonedElement).click(function (ev) {
-        const element = ev.target;
-        findQuestion(element);
-      });
-      $(autoCompleteUl).css("border", "2px solid black");
-      $(autoCompleteUl).css("border-radius", "8px");
-      $(autoCompleteUl).append($("<li></li>").html(clonedElement));
+      $(autoCompleteUl).append(
+        $("<li></li>")
+          .click(function (ev) {
+            let element = ev.target;
+            if (element.tagName.toLowerCase() == "span") {
+              element = $(element).parents("p");
+            }
+            resetOpenedCards();
+            findQuestion(element);
+          })
+          .html(clonedElement)
+      );
     });
+  }
+
+  function resetOpenedCards() {
+    if ($(questionsLi).is(".open")) {
+      $(questionsLi).removeClass("open");
+    }
   }
 
   function clearListBorder() {
