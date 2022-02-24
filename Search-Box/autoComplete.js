@@ -1,82 +1,111 @@
 function autoComplete() {
-  const questions = $(".accordion-item > div.accordion-header > p");
-  const questionsLi = $(".faq-accordion").children();
-  const searchBox = $(".search-box");
-  const input = searchBox.val().toLowerCase();
-  const autoCompleteUl = $(".auto-complete");
+  const questions = document.querySelectorAll(
+    ".accordion-item > div.accordion-header > p"
+  );
+  const accordionItems = document.querySelector(".faq-accordion").children;
+  const searchBox = document.querySelector(".search-box");
+  const input = searchBox.value.toLowerCase();
+  const autoCompleteUl = document.querySelector(".auto-complete");
 
   if (input.length == 0) {
-    $(autoCompleteUl).empty();
-    searchBox.css("border-color", "black");
+    autoCompleteUl.innerHTML = "";
+    searchBox.style.borderColor = "black";
     clearListBorder();
     resetOpenedCards();
     return;
   }
 
   try {
-    $(input).on("change", findAutoCompleteNodes(questions, input));
+    findSearchedNodes();
   } catch (error) {}
 
-  function findAutoCompleteNodes(questions, input) {
-    const autoCompleteElements = [];
-    $(questions).each(function () {
-      if ($(this).text().toLowerCase().includes(input)) {
-        autoCompleteElements.push(this);
+  function findSearchedNodes() {
+    const searchedNodes = [];
+    [...questions].forEach((question) => {
+      if (question.textContent.toLowerCase().includes(input)) {
+        searchedNodes.push(question);
       }
     });
 
-    if (autoCompleteElements.length == 0) {
-      searchBox.css("border-color", "red");
+    if (searchedNodes.length == 0) {
+      searchBox.style.borderColor = "red";
       return;
     }
 
-    searchBox.css("border-color", "black");
-    $(autoCompleteUl).empty();
+    searchBox.style.borderColor = "black";
+    autoCompleteUl.innerHTML = "";
 
-    decorateElements(autoCompleteElements);
+    decorateNodes(searchedNodes);
   }
 
-  function decorateElements(autoCompleteElements) {
-    $(autoCompleteUl).css("border", "2px solid black");
-    $(autoCompleteUl).css("border-radius", "8px");
+  function decorateNodes(searchedNodes) {
+    autoCompleteUl.style.border = "2px solid black";
+    autoCompleteUl.style.borderRadius = "8px";
 
-    $(autoCompleteElements).each(function () {
-      const clonedElement = $(this).clone();
-      $(clonedElement).css("cursor", "pointer");
-      highlightText(clonedElement, input);
+    searchedNodes.forEach((node) => {
+      const clonedNode = node.cloneNode();
+      clonedNode.textContent = node.textContent;
+      clonedNode.style.cursor = "pointer";
+      highlightText(clonedNode, input);
 
-      function highlightText(clonedElement, input) {
+      function highlightText(clonedNode, input) {
         const regExp = new RegExp("(" + input + ")", "gi");
-        $(clonedElement).html(
-          $(clonedElement)
-            .text()
-            .replace(regExp, "<span class='green'>" + "$1" + "</span>")
+        clonedNode.innerHTML = clonedNode.textContent.replace(
+          regExp,
+          "<span class='green'>" + "$1" + "</span>"
         );
       }
 
-      $(autoCompleteUl).append(
-        $("<li></li>")
-          .click(function (ev) {
-            let element = ev.target;
-            if (element.tagName.toLowerCase() == "span") {
-              element = $(element).parents("p");
-            }
-            resetOpenedCards();
-            findQuestion(element);
-          })
-          .html(clonedElement)
-      );
+      const li = document.createElement("li");
+      li.appendChild(clonedNode);
+      li.addEventListener("click", function (ev) {
+        let node = ev.target;
+        if (node.tagName.toLowerCase() == "span") {
+          node = node.parentNode;
+        }
+        resetOpenedCards();
+        findSearchedQuestion(questions, node);
+      });
+
+      autoCompleteUl.appendChild(li);
     });
   }
 
   function resetOpenedCards() {
-    if ($(questionsLi).is(".open")) {
-      $(questionsLi).removeClass("open");
-    }
+    [...accordionItems]
+      .filter((item) => item.classList.contains("open"))
+      .forEach((item) => item.classList.remove("open"));
   }
 
   function clearListBorder() {
-    autoCompleteUl.css("border", "");
-    autoCompleteUl.css("border-radius", "");
+    autoCompleteUl.style.border = "";
+    autoCompleteUl.style.borderRadius = "";
   }
 }
+
+function findSearchedQuestion(questions, clonedNode) {
+  const element = [...questions].find(
+    (question) =>
+      question.textContent.split(/\s+/).join(" ").trim() ==
+      clonedNode.textContent.split(/\s+/).join(" ").trim()
+  );
+
+  if (element) {
+    const parentLiNode = element.parentNode.parentNode;
+    element.scrollIntoView({ behavior: "smooth" });
+    parentLiNode.classList.add("open");
+  }
+}
+
+// function scrollIntoView(element) {
+//   const parentLiNode = $(element).parents(".accordion-item").get(0);
+//   $(parentLiNode).addClass("open");
+//   $("html, body")
+//     .stop(true, true)
+//     .animate(
+//       {
+//         scrollTop: $(".accordion-item.open").offset().top,
+//       },
+//       1200,
+//       "easeOutCubic"
+//     );
