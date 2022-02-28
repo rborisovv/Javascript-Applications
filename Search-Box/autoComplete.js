@@ -97,15 +97,4 @@ function findSearchedQuestion(questions, clonedNode) {
   }
 }
 
-// function scrollIntoView(element) {
-//   const parentLiNode = $(element).parents(".accordion-item").get(0);
-//   $(parentLiNode).addClass("open");
-//   $("html, body")
-//     .stop(true, true)
-//     .animate(
-//       {
-//         scrollTop: $(".accordion-item.open").offset().top,
-//       },
-//       1200,
-//       "easeOutCubic"
-//     );
+//TODO: Find a fix for the ul when searching question mark

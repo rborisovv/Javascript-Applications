@@ -48,7 +48,6 @@
                 <br />
                 <div>
                   <input oninput="autoComplete()" class="search-box" type="text" value="">
-                  <!-- <button onclick="autoComplete()">Търси</button> -->
                   <div>
                     <ul class="auto-complete"></ul>
                   </div>
@@ -708,18 +707,17 @@
   }
 
   function decorateNodes(searchedNodes) {
-    $(autoCompleteUl).css("border", "2px solid black");
-    $(autoCompleteUl).css("border-radius", "8px");
-
     $(searchedNodes).each(function () {
-      const clonedNode = $(this).clone();
+        const clonedNode = $(this).clone();
       $(clonedNode).css("cursor", "pointer");
       highlightText(clonedNode, input);
 
       function highlightText(clonedNode, input) {
-        const regExp = new RegExp("(" + input + ")", "gi");
-        $(clonedNode).html(
-          $(clonedNode)
+          const regExp = new RegExp("(" + input + ")", "gmui");
+          $(autoCompleteUl).css("border", "2px solid black");
+          $(autoCompleteUl).css("border-radius", "8px");
+          $(clonedNode).html(
+            $(clonedNode)
             .text()
             .replace(regExp, "<span class='green'>" + "$1" + "</span>")
         );
